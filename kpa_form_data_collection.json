@@ -1,0 +1,65 @@
+{
+  "info": {
+    "name": "KPA Form Data API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Submit Bogie Checksheet",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"bmbcChecksheet\": {\n    \"adjustingTube\": \"DAMAGED\",\n    \"cylinderBody\": \"WORN OUT\",\n    \"pistonTrunnion\": \"GOOD\",\n    \"plungerSpring\": \"GOOD\"\n  },\n  \"bogieChecksheet\": {\n    \"axleGuide\": \"Worn\",\n    \"bogieFrameCondition\": \"Good\",\n    \"bolster\": \"Good\",\n    \"bolsterSuspensionBracket\": \"Cracked\",\n    \"lowerSpringSeat\": \"Good\"\n  },\n  \"bogieDetails\": {\n    \"bogieNo\": \"BG1234\",\n    \"dateOfIOH\": \"2025-07-01\",\n    \"deficitComponents\": \"None\",\n    \"incomingDivAndDate\": \"NR / 2025-06-25\",\n    \"makerYearBuilt\": \"RDSO/2018\"\n  },\n  \"formNumber\": \"BOGIE-2025-001\",\n  \"inspectionBy\": \"user_id_456\",\n  \"inspectionDate\": \"2025-07-03\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/bogie-checksheet",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "bogie-checksheet"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Wheel Specifications",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/wheel-specification?formNumber=WHEEL-2025-001&submittedBy=user_id_123",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "wheel-specification"
+          ],
+          "query": [
+            {
+              "key": "formNumber",
+              "value": "WHEEL-2025-001"
+            },
+            {
+              "key": "submittedBy",
+              "value": "user_id_123"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
